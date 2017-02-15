@@ -1,32 +1,38 @@
-<!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:map="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:id="@+id/map"-->
-    <!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--tools:context="com.example.student.simplemapproject.MapsActivity"-->
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:gravity="center">
-
-<fragment
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    tools:context="com.example.student.simplemapproject.MapsActivity" />
-
-<Button
-    android:id="@+id/button"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Button" />
+    android:background="@color/cast_intro_overlay_background_color">
 
-</LinearLayout>
-    <!--/>-->
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/geo_search_result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <com.example.student.simplemapproject.DelayAutoCompleteTextView
+        android:id="@+id/geo_autocomplete"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:imeOptions="flagNoExtractUi|actionSearch"
+        android:inputType="textCapSentences"
+        android:background="@color/colorPrimaryDark"
+        android:hint="@string/place_autocomplete_search_hint"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:padding="10dp"
+        android:dropDownWidth="fill_parent"
+        />
+
+    <ImageView
+        android:id="@+id/geo_autocomplete_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:visibility="gone"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        />
+</FrameLayout>
